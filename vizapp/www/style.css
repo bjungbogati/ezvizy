@@ -1,0 +1,94 @@
+/*.tab-content>.tab-pane {
+    display: block;
+}*/
+
+
+#downloadData {color:#333;
+    margin: 6px 60px 0px 15px !important;
+    display: block;
+}
+
+#submit_gst_1_25 {
+  margin:20px;
+}
+
+div.box-body .shiny-input-container {
+    margin: 0 0 50px 20px;
+}
+
+.form-group {
+  float:left;
+}
+
+#dateRange {
+ margin-left:20px; 
+}
+
+
+.sidebar-menu>li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 100%;
+}
+
+#report {
+  float: left;
+    margin: 5px 15px 5px;
+    color: #333;
+}
+
+
+
+/*.bucket-list-container {min-height: 350px;}*/
+                    
+.default-sortable.bucket-list.bucket-list-vertical .rank-list-container {
+    display: block !important;
+    flex: 1 0 auto !important;
+}
+
+.default-sortable .rank-list-title {
+    flex: 0 0 auto  !important;
+    float: right  !important;
+    color: #616161  !important;
+    font-weight: normal !important;
+    font-size: 20px !important;
+    margin: 0 10px !important;
+}
+
+.default-sortable .rank-list {
+    padding: 5px !important;
+}
+
+.default-sortable .rank-list-item {
+    border-radius: 5px !important;
+    display: block !important;
+    padding: 0px 10px !important;
+    background-color: #f8f8f8 !important;
+    border: 1px solid #ddd !important;
+    overflow: hidden !important;
+    width: auto !important;
+    float: left !important;
+    margin: 2px 5px !important;
+}
+                    
+    .default-sortable.rank-list-container {
+    background-color: transparent !important;
+    border: 2px dashed #ddd !important;
+    padding: 0px !important;
+    margin: 5px !important;
+    flex-flow: column nowrap !important;
+}
+
+ .default-sortable .rank-list.rank-list-empty {
+    border-style: none !important;
+ }                   
+
+.column_2, .column_3, .column_4, .column_5 {
+  width:250px;
+
+}
+
+
+

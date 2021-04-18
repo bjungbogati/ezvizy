@@ -15,7 +15,8 @@ shinyServer(function(input, output, session) {
                 values_to = "values"
             ) %>%
         filter(stats %in% c("min", "max", "median"))
-    })
+    }, ignoreNULL = TRUE,
+    ignoreInit = FALSE)
     
     observeEvent(c(input$uploadfile, df()), {
         

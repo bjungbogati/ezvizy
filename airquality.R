@@ -4,21 +4,47 @@
 
 library(tidyverse)
 
-if (!exists("np_air_quality"))
-{
+# if (!exists("np_air_quality"))
+# {
+# 
+# np_air_quality <-
+#   vroom::vroom("https://aqicn.org/data-platform/covid19/report/22562-380f2227",
+#     skip = 4
+#   ) %>%
+#   janitor::clean_names() %>%
+#   filter(country == "NP") %>%
+#   arrange(desc(date))
+# }
 
 np_air_quality <-
-  vroom::vroom("https://aqicn.org/data-platform/covid19/report/22562-380f2227",
-    skip = 4
+  vroom::vroom("waqi-covid19-airqualitydata-2020.csv",
+               skip = 4
   ) %>%
   janitor::clean_names() %>%
   filter(country == "NP") %>%
   arrange(desc(date))
-}
+
+
 
 np_air_quality_cc <- np_air_quality %>%
   pivot_longer(
-    cols = 5:9,
+    cols =c(count,max,median,min,variance),
+    names_to ='names',
+    values_to ='values'
+  )
+
+
+spec <- df() %>% build_longer_spec(
+  eval(parse(text =(input$grouping)))
+)
+
+
+
+
+
+np_air_quality_cc <- np_air_quality %>%
+  pivot_longer(
+    cols = c(min, max, median, variance),
     names_to = "stats",
     values_to = "values"
   ) %>%
@@ -34,7 +60,7 @@ ktm_air_quality <- np_air_quality_cc %>%
 ktm_air_plot <- ktm_air_quality %>%
   ggplot(aes(x = date, y = values, color = stats)) +
   geom_line() +
-  labs(x = "", y = "", title = "Air Quality Index of Kathmandu (pm2.5)") +
+  labs(x = "", y = "", title = "Air Quality Index of Kathmandu") +
   bbplot::bbc_style() +
   theme(plot.margin = unit(c(1, 1, 1, 1), "cm"))
 
