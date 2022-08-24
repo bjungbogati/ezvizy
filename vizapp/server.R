@@ -217,12 +217,12 @@ server <- function(input, output, session) {
             text = "Color",
             labels = NULL,
             input_id = "color"
-          ),
-          add_rank_list(
-            text = "Size",
-            labels = NULL,
-            input_id = "size"
-          )
+          ) #,
+          # add_rank_list(
+          #   text = "Size",
+          #   labels = NULL,
+          #   input_id = "size"
+          # )
         )
       })
 
